@@ -1,5 +1,7 @@
 # Python-WCS-Live-coding-2-Le-petit-train-robot
 
+Trello : https://trello.com/b/MuSCJDeB 
+
 Titre : le petit train robot
 
 Sujet :

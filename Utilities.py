@@ -1,6 +1,8 @@
 # coding: utf-8
 
 import random
+import os
+import sys
 
 def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
     """
@@ -38,3 +40,14 @@ def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
             DataOK = True
 
     return int(MyData)
+
+
+def ClearConsole():
+    """
+        This function clears the console depending on OS
+    """
+
+    if "win" in sys.platform.lower():
+        os.system("cls")
+    elif "linux" in sys.platform.lower():
+        os.system("clear")

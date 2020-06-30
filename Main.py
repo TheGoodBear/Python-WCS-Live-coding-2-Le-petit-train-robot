@@ -4,59 +4,28 @@
 import random
 
 # additional code
-import Utilities
+import Variables
 import Initialization
-
-# Define global variables
-RailroadLength = 0
-RailroadSymbol = "="
-Railroad = []
+import Train
 
 
-def Main(Railroad, RailroadLength):
+def Main():
     """
         Main function
     """
 
+    # Initialize game
     Initialization.ShowTitleAndRules()
-    Railroad = GameInitialization(Railroad, RailroadLength)
-    ShowRailroad(Railroad)
+    Initialization.GameInitialization()
+    Train.ShowRailroad(False)
 
-
-    return RailroadLength
-
-
-
-def GameInitialization(Railroad, RailroadLength):
-    """
-        This function gets initial data from user
-    """
-    print()
-    
-    RailroadLength = Utilities.GetData(
-        "Quelle est la longueur de la voie ferrée (entre 50 et 100): ",
-        50,
-        100,
-        -1)
-    Railroad = [RailroadSymbol] * RailroadLength
-
-    return Railroad
-
-
-def ShowRailroad(Railroad):
-    """
-        This function draws the railroad on the screen
-    """
-
-    # print(f"\nVoie ferrée {len(Railroad)}\n{''.join(Railroad)}\n")
-    print(f"\nVoie ferrée {len(Railroad)}\n")
-    print(''.join(Railroad))
-    print()
-
+    # Main game loop
+    while Variables.GameInProgress:
+        Train.AskUserAction()
 
 
 
 # Program main entry
 if __name__ == "__main__":
 
-    Main(Railroad, RailroadLength)
+    Main()

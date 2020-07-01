@@ -1,8 +1,13 @@
 # coding: utf-8
 
+# import modules
 import random
 import os
 import sys
+
+# additional code
+import Variables
+
 
 def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
     """
@@ -20,6 +25,7 @@ def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
     """
     DataOK = False
 
+    # Do until user entry is valid
     while not DataOK:
         MyData = input(Message)
         if not MyData.isdigit() or int(MyData) < MinimumValue or int(MyData) > MaximumValue:
@@ -39,6 +45,7 @@ def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
             # user entry is valid
             DataOK = True
 
+    # return user entry
     return int(MyData)
 
 
@@ -48,6 +55,51 @@ def ClearConsole():
     """
 
     if "win" in sys.platform.lower():
+        # for windows
         os.system("cls")
     elif "linux" in sys.platform.lower():
+        # for linux
         os.system("clear")
+
+
+def ManageTrainMessage(Message):
+    """
+        This function shows a message for the train action
+        and save it to action history
+        
+        Parameters :
+            Message : the message to show
+    """
+
+    print(Message)
+    Variables.InstructionNumber += 1
+    # add new instruction to history
+    Variables.InstructionsHistory.append("(" + str(Variables.InstructionNumber) + ") " + Message)      
+
+
+def GetSymbolName(Symbol):
+    """
+        This function retrieve the name matching the symbol
+    """
+    ReturnValue = ""
+
+    # check for each possible symbol
+    # should be done in a better way (dictionary ?)
+    if Symbol == Variables.RailroadSymbol[1]:
+        ReturnValue = Variables.RailroadSymbol[0]
+    elif Symbol == Variables.GarageSymbol[1]:
+        ReturnValue = Variables.GarageSymbol[0]
+    elif Symbol == Variables.WarehouseSymbol[1]:
+        ReturnValue = Variables.WarehouseSymbol[0]
+    elif Symbol.isdigit():
+        ReturnValue = Variables.CrateSymbol[0].replace("{NbCrates}", Symbol)
+    elif Symbol == Variables.EnergyPodSymbol[1]:
+        ReturnValue = Variables.EnergyPodSymbol[0]
+
+    return ReturnValue
+
+
+# program main entry (for example to check the functions)
+if __name__ == "__main__":
+    ClearConsole()
+    print("Bonjour")

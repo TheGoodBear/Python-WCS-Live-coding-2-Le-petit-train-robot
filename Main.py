@@ -17,15 +17,15 @@ def Main():
     # Initialize game
     Initialization.ShowTitleAndRules()
     Initialization.GameInitialization()
-    Train.ShowRailroad(False)
+    Train.ShowRailroad()
 
     # Main game loop
     while Variables.GameInProgress:
         Train.AskUserAction()
 
+    print("\nAu revoir.\n")
 
 
 # Program main entry
 if __name__ == "__main__":
-
     Main()

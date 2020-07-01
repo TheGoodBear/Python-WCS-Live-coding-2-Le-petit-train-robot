@@ -30,6 +30,6 @@ Spécifications fonctionnelles :
 * Faire en sorte que le train consomme de l'énergie en proportion de sa charge
 
 Spécifications techniques :
-- Le code doit être commenté (en anglais ou français)
-- Le code doit respecter les bonnes pratiques
-- Le code doit être en anglais
+* Le code doit être commenté (en anglais ou français)
+* Le code doit respecter les bonnes pratiques
+* Le code doit être en anglais

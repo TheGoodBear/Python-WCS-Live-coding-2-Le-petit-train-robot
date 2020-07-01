@@ -26,6 +26,7 @@ def ShowRailroad(ClearTheConsole = True):
     print(f"Nombre de caisses : à charger ({Variables.NumberOfCratesToLoad}) - livrées ({Variables.NumberOfCratesDelivered})")
     print(f"Train - Position : {Variables.TrainPosition} (sur {Utilities.GetSymbolName(Variables.SymbolUnderTrain)} - {Variables.SymbolUnderTrain}) - Énergie : {Variables.TrainCurrentEnergy}/{Variables.TrainMaxEnergy} - Charge : {Variables.TrainCurrentLoad}/{Variables.TrainMaxLoad}")
     print(f"Activités du train : {Variables.TrainMovements} déplacements et {Variables.TrainActions} actions")
+    # show history (only the 10 last) with a slicing
     print(f"Historique des 10 dernières actions : {', '.join(Variables.InstructionsHistory[:-11:-1])}")
     print()
 

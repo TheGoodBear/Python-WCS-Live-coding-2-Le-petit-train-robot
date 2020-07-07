@@ -99,7 +99,7 @@ def GetSymbolName(Symbol):
     return ReturnValue
 
 
-# program main entry (for example to check the functions)
+# file main entry (for example to check the functions)
 if __name__ == "__main__":
     ClearConsole()
     print("Bonjour")

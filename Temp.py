@@ -4,9 +4,9 @@ def Boucle():
         print(Nb)
 
 # Code
-if __name__ == "__main__":
-    Boucle()
-    print("\n...\n")
-    Boucle()
+# if __name__ == "__main__":
+Boucle()
+print("\n...\n")
+Boucle()
 
-    print("\nTerminé")
+print("\nTerminé")

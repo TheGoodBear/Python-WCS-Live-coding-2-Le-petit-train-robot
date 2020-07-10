@@ -10,7 +10,7 @@ import Utilities
 import Train
 
 
-def ShowRailroad(ClearTheConsole = True):
+def ShowUserInterface(ClearTheConsole = True):
     """
         This function draws the railroad on the screen
     """
@@ -110,7 +110,7 @@ def ManageTrainAction(CurrentAction, ActionOccurences = 1):
                 # show message
                 Utilities.ManageTrainMessage(Variables.PossibleTrainActions[0][3])
             # show train and make a pause between 2 movements
-            Train.ShowRailroad()
+            Train.ShowUserInterface()
             time.sleep(Variables.TrainSpeed)
             # if game already ended, go out of loop
             if not Variables.GameInProgress:
@@ -135,7 +135,7 @@ def ManageTrainAction(CurrentAction, ActionOccurences = 1):
                 # show message
                 Utilities.ManageTrainMessage(Variables.PossibleTrainActions[1][3])
             # show train and make a pause between 2 movements
-            Train.ShowRailroad()
+            Train.ShowUserInterface()
             time.sleep(Variables.TrainSpeed)
             # if game already ended, go out of loop
             if not Variables.GameInProgress:
@@ -204,7 +204,7 @@ def ManageTrainAction(CurrentAction, ActionOccurences = 1):
         Variables.GameInProgress = False
 
     # update user interface
-    Train.ShowRailroad()
+    Train.ShowUserInterface()
 
 
 def PlaceTrainOnRailroad():

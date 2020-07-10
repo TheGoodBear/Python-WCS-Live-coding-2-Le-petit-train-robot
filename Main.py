@@ -17,7 +17,7 @@ def Main():
     # Initialize game
     Initialization.ShowTitleAndRules()
     Initialization.GameInitialization()
-    Train.ShowRailroad()
+    Train.ShowUserInterface()
 
     # Main game loop
     while Variables.GameInProgress:

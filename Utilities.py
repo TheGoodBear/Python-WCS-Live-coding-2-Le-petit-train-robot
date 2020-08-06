@@ -11,7 +11,7 @@ import Variables
 
 def GetData(Message, MinimumValue = 0, MaximumValue = 0, DefaultValue = None):
     """
-        This function gets en entry from the user
+        This function gets an entry from the user
         Entry must be integer
 
         Parameters :
